@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<% [:tiny,:weeny,:small,:medium,:large,:huge,:haystacks].each do |format| %>
+<div style="float:left;">
+  <h2><%= format.to_s %></h2>
+  <%= image_tag @user.image(format), :style => "border:solid blue 2px; margin:5px;" %>
+</div>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
